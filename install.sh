@@ -92,7 +92,7 @@ install_XrayR() {
     fi
 
     mkdir /usr/local/XrayR/ -p
-	cd /usr/local/XrayR/
+    cd /usr/local/XrayR/
 
     if  [ $# == 0 ] ;then
         last_version=$(curl -Ls "https://api.github.com/repos/XrayR-project/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
@@ -122,7 +122,7 @@ install_XrayR() {
     chmod +x XrayR
     mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
-    file="https://github.com/XrayR-project/XrayR-release/raw/master/XrayR.service"
+    file="https://github.com/qthang/XrayR-1/raw/master/XrayR.service"
     wget -N --no-check-certificate -O /etc/systemd/system/XrayR.service ${file}
     #cp -f XrayR.service /etc/systemd/system/
     systemctl daemon-reload
@@ -152,7 +152,7 @@ install_XrayR() {
         cp dns.json /etc/XrayR/
     fi
     
-    curl -o /usr/bin/XrayR -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/XrayR.sh
+    curl -o /usr/bin/XrayR -Ls https://raw.githubusercontent.com/qthang/XrayR-1/master/XrayR.sh
     chmod +x /usr/bin/XrayR
     #curl -o /usr/bin/XrayR-tool -Ls https://raw.githubusercontent.com/XrayR-project/XrayR/master/XrayR-tool
     #chmod +x /usr/bin/XrayR-tool
